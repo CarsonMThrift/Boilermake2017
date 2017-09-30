@@ -2,7 +2,7 @@ function initMap() {
   const currentLocation = $("#currentLocation").val().split(",");
   const destination = $("#destination").val().split(",");
 
-  const uluru = { lat: parseInt(currentLocation[0]), lng: parseInt(currentLocation[1]) }
+  const uluru = { lat: parseFloat(currentLocation[0]), lng: parseFloat(currentLocation[1]) }
 
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
