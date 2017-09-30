@@ -1,8 +1,19 @@
-.header {
+body {
+    margin: 0;
+    background-color: #fcfcfc;
+    font-family: Helvetica;
 
-    color: cornflowerblue;
+    clear: both;
+}
+
+header {
+
+    background-color: #529e4b;
+    color: whitesmoke;
     text-align: center;
     padding:3rem;
+
+    letter-spacing: 1px;
     
 }
 
@@ -11,3 +22,32 @@
     height: 400px;
     background-color: grey;
   }
+.data-container {
+    padding: 40px;
+    overflow: auto;
+}
+
+input {
+    padding: 5px;
+    margin: 2px;
+}
+
+label {
+    padding: 5px;
+    margin: 2px;
+    float: right;
+}
+
+table {
+    padding: 0;
+    margin: 0;
+    border: 0 solid black;
+    width: 100%;
+}
+
+.submitButton {
+    height: 30px;
+    width: 70px;
+    margin: 12px auto;
+    display: block;
+}
