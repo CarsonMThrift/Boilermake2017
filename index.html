@@ -13,13 +13,7 @@
         <link type="text/css" href="./index.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./index.js"></script>
-        <style>
- #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
- }
-</style>
+        
     </head>
     <body>
       <header>
@@ -39,10 +33,58 @@
 
         <br />
         <button type="submit" class="submitButton">Submit</button>
+
       </div>
 
 
       <div id="map"></div>
+
+      <div id="weather">
+
+        <label for="date">Date</label>
+        <p id="date"></p>
+
+        <label for="location">Location</label>
+        <p id="location"></p>
+
+        <label for="temp">Temperature</label>
+        <p id="temp"></p>
+
+        <label for="description">Description</label>
+        <p id="description"></p>
+
+        <label for="chanceRain">Chance of Rain</label>
+        <p id="chanceRain"></p>
+      </div>
+
+      <script>
+
+        var callbackFunction = function(data) {
+
+            let conditions = data.query.results.channel.item.condition;
+
+            let temp = conditions.temp;
+            let date = conditions.date;
+            let description = conditions.text;
+            let date = conditions.date;
+            
+            let locationP = document.getElementById("location");
+            let tempP = document.getElementById("temp");
+            let descriptionP = document.getElementById("description");
+            let chanceRainP = document.getElementById("chanceRain");
+            let dateP = document.getElementById("date")
+
+            tempP.innerHTML = temp;
+            dateP.innerHTML = date;
+
+
+
+
+        };
+      </script>
+      
+      <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 2487889&format=json&callback=callbackFunction"></script>
+
 
       <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&">
