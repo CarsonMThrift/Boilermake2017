@@ -38,6 +38,10 @@ label {
     float: right;
 }
 
+#weather {
+    overflow: auto;
+}
+
 table {
     padding: 0;
     margin: 0;
