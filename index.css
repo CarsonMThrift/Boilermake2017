@@ -1,8 +1,20 @@
-.header {
+body {
+    margin: 0;
+    background-color: #fcfcfc;
+    font-family: Helvetica;
+}
 
-    color: cornflowerblue;
+header {
+
+    background-color: #529e4b;
+    color: whitesmoke;
     text-align: center;
     padding:3rem;
+
+    letter-spacing: 1px;
     
-    
+}
+
+.data-container {
+    padding: 40px;
 }
