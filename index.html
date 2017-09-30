@@ -27,7 +27,7 @@
     </header>
 
     <div class="data-container">
-        <table style="width:100%">
+        <table>
             <tr>
                 <td><label for="current">Current Location</label></td>
                 <td><input type="text" name="current" id="currentLocation" /></td>
@@ -46,22 +46,29 @@
         </div>
     </div>
 
-    <div id="weather">
-
-        <label for="date">Date</label>
-        <p id="date"></p>
-
-        <label for="location">Location</label>
-        <p id="location"></p>
-
-        <label for="temp">Temperature</label>
-        <p id="temp"></p>
-
-        <label for="description">Description</label>
-        <p id="description"></p>
-
-        <label for="chanceRain">Chance of Rain</label>
-        <p id="chanceRain"></p>
+    <div class="output-container">
+        <table>
+            <tr>
+                <td><span class="output-label">Date</span></td>
+                <td><span id="date"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Location</span></td>
+                <td><span id="location"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Temperature</span></td>
+                <td><span id="temp"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Description</span></td>
+                <td><span id="description"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Chance of Rain</span></td>
+                <td><span id="chanceRain"></span></td>
+            </tr>
+        </table>
     </div>
 
     <div id="map"></div>

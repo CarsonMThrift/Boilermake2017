@@ -38,6 +38,19 @@ label {
     float: right;
 }
 
+.output-container {
+    padding: 40px;
+    overflow: auto;
+}
+
+.output-label {
+    padding: 5px;
+    margin: 2px;
+    display: block;
+    float: right;
+    font-weight: bold;
+}
+
 #weather {
     overflow: auto;
 }
