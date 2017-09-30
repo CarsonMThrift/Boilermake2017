@@ -1,5 +1,10 @@
+* {
+    clear: both;
+}
+
 body {
     margin: 0;
+    padding: 0;
     background-color: #fcfcfc;
     font-family: Helvetica;
 }
@@ -40,9 +45,13 @@ label {
 }
 
 .output-container {
-    padding: 40px;
+    padding: 0;
     overflow: auto;
     display: none;
+}
+
+.output-container > table {
+    margin-bottom: 40px;
 }
 
 .output-label {
@@ -82,7 +91,17 @@ td, tr {
 
 #footer {
     width: 100%;
-    padding: 200px;
+    height: 200px;
     background-color: grey;
     display: none;
+}
+
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+    .output-container, .data-container, #map {
+        margin: 0 15%;
+        width: 70%;
+    }
+S
 }
