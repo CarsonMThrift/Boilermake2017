@@ -19,7 +19,7 @@ header {
     font-family: 'Dancing Script', cursive;
     background-image:url('./logo_stuff/beach.jpg');
     background-repeat: no-repeat;
-    height:65%;
+    height:55%;
 
     opacity: .8;
 }
@@ -42,8 +42,8 @@ h2 {
 
 #logo {
 
-    width:300px;
-    height:300px;
+    width:200px;
+    height:200px;
 }
 
 #map {
