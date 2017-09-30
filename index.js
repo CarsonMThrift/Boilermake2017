@@ -1,24 +1,23 @@
 function initMap(destination) {
-  const currentLocation = $("#currentLocation").val();
+  // const currentLocation = $("#currentLocation").val();
 
-  const origin = convertAddress(currentLocation);
-  // destination = convertAddress(destination);
-  console.log(origin);
+  // const origin = convertAddress(currentLocation);
+  destination = convertAddress(destination);
 
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
-    center: origin
+    center: destination
   });
 
-  const originMarker = new google.maps.Marker({
-    position: origin,
-    map: map
-  });
-
-  // const destinationMarker = new google.maps.Marker({
-  //   position: destination,
+  // const originMarker = new google.maps.Marker({
+  //   position: origin,
   //   map: map
   // });
+
+  const destinationMarker = new google.maps.Marker({
+    position: destination,
+    map: map
+  });
 }
 
 function convertAddress(address) {
@@ -33,8 +32,7 @@ function convertAddress(address) {
       var longitude = results[0].geometry.location.lng();
       const lat = parseFloat(latitude);
       const long = parseFloat(longitude);
-      coords = {lat: `${latitude}`, lng: `${longitude}`};
-      console.log(coords);
+      coords = {lat: lat, lng: long};
 
       const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
@@ -52,17 +50,17 @@ function convertAddress(address) {
 }
 
 function getParking(destination) {
-    const lat = destination[0];
-    const long = destination[1];
-    const options = {
-      "url": `https://apis.solarialabs.com/shine/v1/parking-rules/meters?lat=${lat}&long=${long}&apikey=3eXq0tri3mABFAZJapJX1uAvD0AZY1qP`,
-      "method": "GET",
-      "processData": false
-    }
-
-    $.ajax(options).done((response)=>{
-      console.log(response)
-  });
+  //   const lat = destination[0];
+  //   const long = destination[1];
+  //   const options = {
+  //     "url": `https://apis.solarialabs.com/shine/v1/parking-rules/meters?lat=${lat}&long=${long}&apikey=3eXq0tri3mABFAZJapJX1uAvD0AZY1qP`,
+  //     "method": "GET",
+  //     "processData": false
+  //   }
+  //
+  //   $.ajax(options).done((response)=>{
+  //     console.log(response)
+  // });
 }
 
 $(document).ready(function() {
