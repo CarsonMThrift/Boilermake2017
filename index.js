@@ -27,6 +27,7 @@ function initMap() {
 
 }
 
+
 function convertAddress(address) {
   var geocoder = new google.maps.Geocoder();
   // var address = "8228 E 21st St, Indianapolis, Indiana 46219";
@@ -46,6 +47,9 @@ function convertAddress(address) {
 $(document).ready(function() {
   $(".submitButton").on("click", function() {
     // Call various API functions as we get them set up
+    document.querySelector('.output-container').style.display="initial";
+    document.querySelector('#map').style.display="block";
+    document.querySelector('#footer').style.display="block";
     initMap();
   });
 

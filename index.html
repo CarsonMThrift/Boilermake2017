@@ -1,51 +1,99 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>T-Mammoth</title>
+<!--[if gt IE 8]>
+    <!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" href="./index.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./index.js"></script>
-        <style>
- #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
- }
-</style>
-    </head>
-    <body>
-      <header>
-          <h1>Welcome to Homeboard!</h1>
-          <h2>Your commute, simplified.</h2>
-      </header>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>T-Mammoth</title>
 
-      <div class="data-container">
-        <label for="current">Current Location</label>
-        <input type="text" name="current" id="currentLocation" />
-        <br />
-        <label for="destination">Destination</label>
-        <input type="text" name="destination" id="destination" />
-        <br />
-        <label for="eta">Arrival Time</label>
-        <input type="text" name="eta" id="eta" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./index.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
 
-        <br />
-        <button type="submit" class="submitButton">Submit</button>
-      </div>
+</head>
 
+<body>
+    <header>
+        <h1>Welcome to Homeboard!</h1>
+        <h2>Your commute, simplified.</h2>
+    </header>
 
-      <div id="map"></div>
+    <div class="data-container">
+        <table>
+            <tr>
+                <td><label for="current">Current Location</label></td>
+                <td><input type="text" name="current" id="currentLocation" /></td>
+            </tr>
+            <tr>
+                <td><label for="destination">Destination</label></td>
+                <td><input type="text" name="destination" id="destination" /></td>
+            </tr>
+            <tr>
+                <td><label for="eta">Arrival Time</label></td>
+                <td><input type="text" name="eta" id="eta" /></td>
+            </tr>
+        </table>
+        <div>
+            <button type="submit" class="submitButton">Submit</button>
+        </div>
+    </div>
 
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&">
-      </script> 
-    </body>
+    <div class="output-container">
+        <table>
+            <tr>
+                <td><span class="output-label">Date</span></td>
+                <td><span id="date"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Location</span></td>
+                <td><span id="location"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Temperature</span></td>
+                <td><span id="temp"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Description</span></td>
+                <td><span id="description"></span></td>
+            </tr>
+            <tr>
+                <td><span class="output-label">Chance of Rain</span></td>
+                <td><span id="chanceRain"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="footer"></div>
+
+    <script>
+        var callbackFunction = function (data) {
+
+            let conditions = data.query.results.channel.item.condition;
+
+            let temp = conditions.temp;
+            let description = conditions.text;
+            let date = conditions.date;
+
+            let locationP = document.getElementById("location");
+            let tempP = document.getElementById("temp");
+            let descriptionP = document.getElementById("description");
+            let chanceRainP = document.getElementById("chanceRain");
+            let dateP = document.getElementById("date")
+
+            tempP.innerHTML = temp;
+            dateP.innerHTML = date;
+
+        };
+    </script>
+
+    <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 2487889&format=json&callback=callbackFunction"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&"></script>
+</body>
+
 </html>
