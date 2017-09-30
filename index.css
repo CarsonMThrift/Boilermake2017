@@ -2,19 +2,18 @@ body {
     margin: 0;
     background-color: #fcfcfc;
     font-family: Helvetica;
-
-    clear: both;
 }
 
 header {
-
     background-color: #529e4b;
     color: whitesmoke;
     text-align: center;
-    padding:3rem;
-
+    padding: 3rem;
     letter-spacing: 1px;
-    
+}
+
+h1 {
+    font-size: 40px;
 }
 
 .data-container {
