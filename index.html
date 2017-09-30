@@ -2,52 +2,53 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>T-Mammoth</title>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" href="./index.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./index.js"></script>
-        <style>
- #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
- }
-</style>
-    </head>
-    <body>
-      <header>
-          <h1>Welcome to Homeboard!</h1>
-          <h2>Your commute, simplified.</h2>
-      </header>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>T-Mammoth</title>
 
-      <div class="data-container">
-        <section id="input-column">
-            <label for="current">Current Location</label>
-            <input type="text" name="current" id="currentLocation" />
-            <br />
-            <label for="destination">Destination</label>
-            <input type="text" name="destination" id="destination" />
-            <br />
-            <label for="eta">Arrival Time</label>
-            <input type="text" name="eta" id="eta" />
-        </section>
-        <section id="submit-column">
-            <button type="submit" class="submitButton">Submit</button>
-        </section>
-      </div>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./index.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Homeboard!</h1>
+        <h2>Your commute, simplified.</h2>
+    </header>
+
+    <div class="data-container">
+        <label for="current">Current Location</label>
+        <input type="text" name="current" id="currentLocation" />
+        <br />
+        <label for="destination">Destination</label>
+        <input type="text" name="destination" id="destination" />
+        <br />
+        <label for="eta">Arrival Time</label>
+        <input type="text" name="eta" id="eta" />
+        <button type="submit" class="submitButton">Submit</button>
+    </div>
 
 
-      <div id="map"></div>
+    <div id="map"></div>
 
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&">
-      </script>
-    </body>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&">
+
+    </script>
+</body>
+
 </html>

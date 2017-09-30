@@ -26,14 +26,6 @@ input {
     margin-bottom: 10px;
 }
 
-#input-column {
-    float: left;
-    padding-right: 40px;
-}
-
-#submit-column {
-    float: left;
-}
 
 .submitButton {
     height: 30px;
