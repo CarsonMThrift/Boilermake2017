@@ -73,6 +73,8 @@
 
     <div id="map"></div>
 
+    <div id="footer"></div>
+
     <script>
         var callbackFunction = function (data) {
 
@@ -91,18 +93,11 @@
             tempP.innerHTML = temp;
             dateP.innerHTML = date;
 
-
-
-
         };
     </script>
 
     <script src="https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 2487889&format=json&callback=callbackFunction"></script>
-
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&">
-
-    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLeVSLz7snct0QPJ-9d0x_RaWVPWKMcwY&"></script>
 </body>
 
 </html>

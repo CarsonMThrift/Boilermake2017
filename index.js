@@ -31,6 +31,9 @@ function initMap() {
 $(document).ready(function() {
   $(".submitButton").on("click", function() {
     // Call various API functions as we get them set up
+    document.querySelector('.output-container').style.display="initial";
+    document.querySelector('#map').style.display="block";
+    document.querySelector('#footer').style.display="block";
     initMap();
   });
 
