@@ -2,6 +2,8 @@ body {
     margin: 0;
     background-color: #fcfcfc;
     font-family: Helvetica;
+
+    clear: both;
 }
 
 header {
@@ -17,4 +19,24 @@ header {
 
 .data-container {
     padding: 40px;
+    overflow: auto;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+#input-column {
+    float: left;
+    padding-right: 40px;
+}
+
+#submit-column {
+    float: left;
+}
+
+#submit-button {
+    height: 30px;
+    width: 70px;
+    vertical-align: middle;
 }
