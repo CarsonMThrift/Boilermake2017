@@ -1,11 +1,7 @@
-
-
-function initMap() {
-  const currentLocation = $("#currentLocation").val();
-  const destinationLocation = $("#destination").val();
+function initMap(destination) {
 
   const origin = convertAddress(currentLocation);
-  // const destination = convertAddress(destinationLocation);
+  // const destination = convertAddress(destination);
   console.log(origin);
 
   const map = new google.maps.Map(document.getElementById('map'), {
@@ -44,13 +40,20 @@ function convertAddress(address) {
   });
 }
 
+function getParking() {
+
+}
+
 $(document).ready(function() {
   $(".submitButton").on("click", function() {
+      const destination = $("#destination").val();
+
     // Call various API functions as we get them set up
     document.querySelector('.output-container').style.display="initial";
     document.querySelector('#map').style.display="block";
     document.querySelector('#footer').style.display="block";
-    initMap();
+    initMap(destination);
+    getParking(destination);
   });
 
 });
