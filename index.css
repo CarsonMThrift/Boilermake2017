@@ -70,7 +70,7 @@ td, tr {
 }
 
 .output-container > table tr:nth-child(odd) {
-    background-color: lightgrey;
+    background-color: #e2e2e2;
 }
 
 .submitButton {
