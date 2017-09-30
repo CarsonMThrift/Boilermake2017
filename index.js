@@ -1,18 +1,12 @@
 function initMap(destination) {
-  // const currentLocation = $("#currentLocation").val();
+    // TODO Get GPS location of device
 
-  // const origin = convertAddress(currentLocation);
   destination = convertAddress(destination);
 
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: destination
   });
-
-  // const originMarker = new google.maps.Marker({
-  //   position: origin,
-  //   map: map
-  // });
 
   const destinationMarker = new google.maps.Marker({
     position: destination,
@@ -50,10 +44,10 @@ function convertAddress(address) {
 }
 
 function getParking(destination) {
-  //   const lat = destination[0];
-  //   const long = destination[1];
+  //   destination = convertAddress(destination);
+  //   console.log(destination);
   //   const options = {
-  //     "url": `https://apis.solarialabs.com/shine/v1/parking-rules/meters?lat=${lat}&long=${long}&apikey=3eXq0tri3mABFAZJapJX1uAvD0AZY1qP`,
+  //     "url": `https://apis.solarialabs.com/shine/v1/parking-rules/meters?lat=${destination.lat}&long=${destination.lng}&apikey=3eXq0tri3mABFAZJapJX1uAvD0AZY1qP`,
   //     "method": "GET",
   //     "processData": false
   //   }
