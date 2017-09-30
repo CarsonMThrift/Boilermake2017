@@ -1,9 +1,7 @@
 function initMap(destination) {
 
   const origin = convertAddress(currentLocation);
-<<<<<<< HEAD
   const destination = convertAddress(destinationLocation);
-=======
   // const destination = convertAddress(destination);
   console.log(origin);
 
@@ -16,17 +14,12 @@ function initMap(destination) {
     position: origin,
     map: map
   });
->>>>>>> 8b246732094bf77ec8635105da14c4a3bee3cde3
-
 
   // const destinationMarker = new google.maps.Marker({
   //   position: destination,
   //   map: map
   // });
-
-
 }
-
 
 function convertAddress(address) {
   var geocoder = new google.maps.Geocoder();
@@ -52,13 +45,13 @@ function convertAddress(address) {
   });
 }
 
-function getParking() {
+function getParking(destination) {
 
 }
 
 $(document).ready(function() {
   $(".submitButton").on("click", function() {
-      const destination = $("#destination").val();
+    const destination = $("#destination").val();
 
     // Call various API functions as we get them set up
     document.querySelector('.output-container').style.display="initial";
