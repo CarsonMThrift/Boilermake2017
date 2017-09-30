@@ -25,7 +25,7 @@ function convertAddress(address) {
   var geocoder = new google.maps.Geocoder();
   // var address = "8228 E 21st St, Indianapolis, Indiana 46219";
   let coords;
-  
+
   geocoder.geocode( { 'address': address}, function(results, status) {
 
     if (status == google.maps.GeocoderStatus.OK) {
@@ -38,7 +38,7 @@ function convertAddress(address) {
         zoom: 4,
         center: coords
       });
-    
+
       const originMarker = new google.maps.Marker({
         position: coords,
         map: map
@@ -46,11 +46,21 @@ function convertAddress(address) {
     }
   });
 
-  
+
 }
 
 function getParking(destination) {
+    const lat = destination[0];
+    const long = destination[1];
+    const options = {
+      "url": `https://apis.solarialabs.com/shine/v1/parking-rules/meters?lat=${lat}&long=${long}&apikey=3eXq0tri3mABFAZJapJX1uAvD0AZY1qP`,
+      "method": "GET",
+      "processData": false
+    }
 
+    $.ajax(options).done((response)=>{
+      console.log(response)
+  });
 }
 
 $(document).ready(function() {
