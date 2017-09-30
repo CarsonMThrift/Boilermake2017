@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<<<<<<< HEAD <!--[if gt IE 8]>
+ <!--[if gt IE 8]>
     <!-->
     <html class="no-js">
     <!--<![endif]-->
@@ -44,21 +44,6 @@
             <button type="submit" class="submitButton">Submit</button>
         </div>
 
-        <div class="data-container">
-            <label for="current">Current Location</label>
-            <input type="text" name="current" id="currentLocation" />
-            <br />
-            <label for="destination">Destination</label>
-            <input type="text" name="destination" id="destination" />
-            <br />
-            <label for="eta">Arrival Time</label>
-            <input type="text" name="eta" id="eta" />
-
-            <br />
-            <button type="submit" class="submitButton">Submit</button>
-
-        </div>
-
 
         <div id="map"></div>
 
@@ -86,7 +71,6 @@
                 let conditions = data.query.results.channel.item.condition;
 
                 let temp = conditions.temp;
-                let date = conditions.date;
                 let description = conditions.text;
                 let date = conditions.date;
 
