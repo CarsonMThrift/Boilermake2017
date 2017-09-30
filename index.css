@@ -62,6 +62,15 @@ table {
     margin: 0;
     border: 0 solid black;
     width: 100%;
+    border-collapse: collapse;
+}
+
+td, tr {
+    padding-left: 20px;
+}
+
+.output-container > table tr:nth-child(odd) {
+    background-color: lightgrey;
 }
 
 .submitButton {
