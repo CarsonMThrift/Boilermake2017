@@ -31,8 +31,10 @@ function convertAddress(address) {
     if (status == google.maps.GeocoderStatus.OK) {
       var latitude = results[0].geometry.location.lat();
       var longitude = results[0].geometry.location.lng();
+      const lat = parseFloat(latitude);
+      const long = parseFloat(longitude);
       coords = {lat: `${latitude}`, lng: `${longitude}`};
-      console.log(coords)
+      console.log(coords);
 
       const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
