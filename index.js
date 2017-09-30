@@ -3,16 +3,23 @@ function initMap(destination) {
 
   const origin = convertAddress(currentLocation);
   // destination = convertAddress(destination);
+  console.log(origin);
 
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: origin
+  });
+
+  const originMarker = new google.maps.Marker({
+    position: origin,
+    map: map
+  });
 
   // const destinationMarker = new google.maps.Marker({
   //   position: destination,
   //   map: map
   // });
-
-
 }
-
 
 function convertAddress(address) {
   var geocoder = new google.maps.Geocoder();
@@ -42,13 +49,13 @@ function convertAddress(address) {
   
 }
 
-function getParking() {
+function getParking(destination) {
 
 }
 
 $(document).ready(function() {
   $(".submitButton").on("click", function() {
-      const destination = $("#destination").val();
+    const destination = $("#destination").val();
 
     // Call various API functions as we get them set up
     document.querySelector('.output-container').style.display="initial";
